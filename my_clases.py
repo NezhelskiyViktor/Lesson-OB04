@@ -46,3 +46,14 @@ class Monster:
 
     def attack(self):
         print(f"Атака монстра {self.name} с силой {self.power}")
+
+def main():
+    player = Player("Игрок", Sword("Меч", 10))
+    player.attack()
+
+    monster = Monster("Монстр", 5)
+    player.change_weapon(monster)
+    player.attack() # Атака монстра Монстр с силой 5
+
+    player.change_weapon(Knife("Нож", 5))
+    player.attack() # Атака ножом Нож с силой 5
